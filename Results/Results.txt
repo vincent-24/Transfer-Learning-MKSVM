@@ -1,0 +1,33 @@
+Conventional Support Vector Machines:
+=========================================
+    Linear Kernel Accuracy: 73.50%
+    Poly Kernel Accuracy: 72.00%
+    Rbf Kernel Accuracy: 74.50%
+    Sigmoid Kernel Accuracy: 62.50%
+
+
+
+Best Parameters for Linear, Polynomial, RBF, and Sigmoid Kernels:
+=================================================================================================
+    Best Parameters: {'svc__C': 1, 'svc__gamma': 'scale', 'svc__kernel': 'linear'}
+    Best Cross-Validation Accuracy: 0.8300000000000001
+    Linear Kernel Accuracy: 73.50%
+
+    Best Parameters: {'svc__C': 10, 'svc__degree': 2, 'svc__gamma': 1, 'svc__kernel': 'poly'}
+    Best Cross-Validation Accuracy: 0.844
+    Poly Kernel Accuracy: 73.50%
+
+    Best Parameters: {'svc__C': 10, 'svc__gamma': 0.1, 'svc__kernel': 'rbf'}
+    Best Cross-Validation Accuracy: 0.842
+    Rbf Kernel Accuracy: 76.00%
+
+    Best Parameters: {'svc__C': 10, 'svc__gamma': 0.001, 'svc__kernel': 'sigmoid'}
+    Best Cross-Validation Accuracy: 0.8300000000000001
+    Sigmoid Kernel Accuracy: 74.50%
+
+
+
+Multiple Kernel Support Vector Machine
+=========================================
+    Multi-kernel SVM Accuracy: 76.00%
+
