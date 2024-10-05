@@ -1,3 +1,4 @@
+import numpy as np
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from sklearn.metrics.pairwise import linear_kernel, rbf_kernel, polynomial_kernel, sigmoid_kernel
@@ -22,6 +23,7 @@ class Multi_Kernel_SVM:
         self.K_poly_test = polynomial_kernel(self.X_test, self.X_train, degree=3)  
         self.K_sigmoid_test = sigmoid_kernel(self.X_test, self.X_train, gamma=0.1, coef0=0)
 
+    '''
     def combine_kernels(self, beta_linear, beta_poly, beta_rbf, beta_sigmoid):
         # Step 2: Combine kernels manually (weighted sum) for both training and test data
         # beta_linear, beta_rbf, beta_poly, beta_sigmoid = weights
@@ -36,6 +38,21 @@ class Multi_Kernel_SVM:
             beta_rbf * self.K_rbf_test + 
             beta_poly * self.K_poly_test + 
             beta_sigmoid * self.K_sigmoid_test
+        )
+    '''
+    def combine_kernels(self, weights):
+        # Step 2: Combine kernels manually (weighted sum) for both training and test data
+        self.K_combined_train = (
+            weights[0] * self.K_linear_train + 
+            weights[1] * self.K_rbf_train + 
+            weights[2] * self.K_poly_train + 
+            weights[3] * self.K_sigmoid_train
+        )
+        self.K_combined_test = (
+            weights[0] * self.K_linear_test + 
+            weights[1] * self.K_rbf_test + 
+            weights[2] * self.K_poly_test + 
+            weights[3] * self.K_sigmoid_test
         )
 
     def fit_combined_kernels(self):

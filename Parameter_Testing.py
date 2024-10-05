@@ -19,6 +19,7 @@ X_test = np.asarray(pd.read_csv(test)[feature_df.columns])
 y_test = np.asarray(pd.read_csv(test)['label']) 
 
 #================================CONVENTIONAL SUPPORT VECTOR MACHINE================================#
+'''
 print('Conventional Support Vector Machine:\n')
 conventional_SVM = Conventional_SVM(X_train, y_train, X_test, y_test, feature_df)
 conventional_SVM.test_kernels(kernel_types)
@@ -34,13 +35,13 @@ for kernel in kernel_types:
     param_grid = common_param_grid.copy()
     param_grid['svc__kernel'] = [kernel]
     conventional_SVM.optimal_parameters(pipeline, param_grid, 5, 'accuracy')
-    
+'''
+
 #================================MULTI-KERNEL SUPPORT VECTOR MACHINE================================#
 print('\n\n\nMultiple Kernel Support Vector Machine:\n')
-
 mksvm = Multi_Kernel_SVM(X_train, y_train, X_test, y_test)
 mksvm.compute_kernel_matricies()
-mksvm.combine_kernels(0.2, 0.5, 0.4, 0.3)
+mksvm.combine_kernels([0.2, 0.4, 0.5, 0.3])
 mksvm.fit_combined_kernels()
 mksvm.predict_combined_kernels()
 mksvm.get_accuracy()
