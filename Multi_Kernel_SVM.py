@@ -2,6 +2,8 @@ import numpy as np
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from sklearn.metrics.pairwise import linear_kernel, rbf_kernel, polynomial_kernel, sigmoid_kernel
+from sklearn.model_selection import GridSearchCV
+from itertools import product
 
 class Multi_Kernel_SVM:
     def __init__(self, X_train, y_train, X_test, y_test):
@@ -23,23 +25,6 @@ class Multi_Kernel_SVM:
         self.K_poly_test = polynomial_kernel(self.X_test, self.X_train, degree=3)  
         self.K_sigmoid_test = sigmoid_kernel(self.X_test, self.X_train, gamma=0.1, coef0=0)
 
-    '''
-    def combine_kernels(self, beta_linear, beta_poly, beta_rbf, beta_sigmoid):
-        # Step 2: Combine kernels manually (weighted sum) for both training and test data
-        # beta_linear, beta_rbf, beta_poly, beta_sigmoid = weights
-        self.K_combined_train = (
-            beta_linear * self.K_linear_train + 
-            beta_rbf * self.K_rbf_train + 
-            beta_poly * self.K_poly_train + 
-            beta_sigmoid * self.K_sigmoid_train
-        )
-        self.K_combined_test = (
-            beta_linear * self.K_linear_test + 
-            beta_rbf * self.K_rbf_test + 
-            beta_poly * self.K_poly_test + 
-            beta_sigmoid * self.K_sigmoid_test
-        )
-    '''
     def combine_kernels(self, weights):
         # Step 2: Combine kernels manually (weighted sum) for both training and test data
         self.K_combined_train = (
@@ -68,3 +53,5 @@ class Multi_Kernel_SVM:
         # Step 5: Calculate the accuracy score
         self.accuracy = accuracy_score(self.y_test, self.y_pred)
         print(f'Multi-kernel SVM Accuracy: {self.accuracy * 100:.2f}%')
+
+    

@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
+from numpy import load
 from sklearn.svm import SVC
-from sklearn.pipeline import Pipeline
+from sklearn.pipeline import Pipeline, make_pipeline
 from sklearn.preprocessing import StandardScaler
+
 from Conventional_SVM import *
 from Multi_Kernel_SVM import *
 
@@ -19,14 +21,13 @@ X_test = np.asarray(pd.read_csv(test)[feature_df.columns])
 y_test = np.asarray(pd.read_csv(test)['label']) 
 
 #================================CONVENTIONAL SUPPORT VECTOR MACHINE================================#
-'''
+# '''
 print('Conventional Support Vector Machine:\n')
 conventional_SVM = Conventional_SVM(X_train, y_train, X_test, y_test, feature_df)
 conventional_SVM.test_kernels(kernel_types)
 
 # Define kernels to get optimal parameters
 common_param_grid = {'svc__C': [0.1, 1, 10, 100], 'svc__gamma': ['scale', 'auto', 0.001, 0.01, 0.1, 1], 'svc__degree': [2, 3, 4, 5]}
-
 pipeline = Pipeline([('scaler', StandardScaler()), ('svc', SVC())])
 
 # Loop through each kernel type and output optimal parameters
@@ -35,7 +36,7 @@ for kernel in kernel_types:
     param_grid = common_param_grid.copy()
     param_grid['svc__kernel'] = [kernel]
     conventional_SVM.optimal_parameters(pipeline, param_grid, 5, 'accuracy')
-'''
+# '''
 
 #================================MULTI-KERNEL SUPPORT VECTOR MACHINE================================#
 print('\n\n\nMultiple Kernel Support Vector Machine:\n')
@@ -45,3 +46,12 @@ mksvm.combine_kernels([0.2, 0.4, 0.5, 0.3])
 mksvm.fit_combined_kernels()
 mksvm.predict_combined_kernels()
 mksvm.get_accuracy()
+
+#====================TRANSFER LEARNING FEATURE EXTRACTION FUNCTION====================#
+from Transfer_Learning import TransferLearningSVM
+
+print('\n\n\nTransfer Learning Multiple Kernel Support Vector Machine:\n')
+transfer_learning_model = TransferLearningSVM(X_train, y_train, X_test, y_test)
+transfer_learning_model.train_on_source()
+fine_tuning_accuracy = transfer_learning_model.fine_tune_on_target()
+transfer_learning_model.save_kernels('Saved_Kernels/trained_kernels.npz')
