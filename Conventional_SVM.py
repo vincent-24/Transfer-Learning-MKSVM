@@ -3,12 +3,11 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import GridSearchCV
 
 class Conventional_SVM:
-    def __init__(self, X_train, y_train, X_test, y_test, feature_df):
+    def __init__(self, X_train, y_train, X_test, y_test):
         self.X_train = X_train
         self.y_train = y_train
         self.X_test = X_test
         self.y_test = y_test
-        self.feature_df = feature_df
 
     def __evaluate_svm(self, kernel, C=2, gamma='auto', degree=3):
         clf = SVC(kernel=kernel, C=C, gamma=gamma, degree=degree)
