@@ -73,7 +73,7 @@ from Transfer_Learning import *
 
 print('\n\n\nTransfer Learning Multiple Kernel Support Vector Machine:\n')
 
-num_datasets = 5
+num_datasets = 10
 
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.5, random_state=42)
 X_test_splits = np.array_split(X_test, num_datasets)

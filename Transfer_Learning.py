@@ -75,7 +75,6 @@ class TransferLearningSVM:
         print(f"Optimized Kernel Weights: {best_weights}")
 
         return best_accuracy, best_weights
-
     
     def tlmksvm(self):
         kernel_weights = np.array([0.25, 0.25, 0.25, 0.25])

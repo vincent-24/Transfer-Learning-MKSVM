@@ -36,59 +36,142 @@ Multi-kernel SVM Accuracy: 76.00%
 Transfer Learning Multiple Kernel Support Vector Machine:
 
 Transfer Learning Iteration 1
-Iteration 0: Accuracy = 0.633, Weights = [0.2126276  0.30153187 0.42693749 0.05890304]
-Iteration 10: Accuracy = 0.754, Weights = [0.59198758 0.14517065 0.         0.26284177]
-Iteration 20: Accuracy = 0.741, Weights = [0.43994571 0.         0.20103766 0.35901663]
-Iteration 30: Accuracy = 0.585, Weights = [0.09370518 0.28890714 0.25801732 0.35937037]
-Iteration 40: Accuracy = 0.608, Weights = [0.13139039 0.43403824 0.20205662 0.23251474]
-Iteration 50: Accuracy = 0.656, Weights = [0.22829618 0.42760943 0.15441566 0.18967873]
-Iteration 60: Accuracy = 0.641, Weights = [0.2081781  0.48822057 0.13742952 0.16617181]
-Iteration 70: Accuracy = 0.738, Weights = [0.33007022 0.20963646 0.07670531 0.38358801]
-Iteration 80: Accuracy = 0.610, Weights = [0.2481054  0.20652198 0.44966394 0.09570868]
-Iteration 90: Accuracy = 0.515, Weights = [0.26042661 0.0848354  0.65473799 0.        ]
-Best Accuracy: 0.754
-Optimized Kernel Weights: [0.6569922  0.14176433 0.04645387 0.1547896 ]
+Iteration 0: Accuracy = 0.716, Weights =  [0.24953279 0.24628997 0.24272879 0.26144845]
+Iteration 10: Accuracy = 0.709, Weights = [0.23458498 0.25574778 0.25713498 0.25253225]
+Iteration 20: Accuracy = 0.682, Weights = [0.26505711 0.30537293 0.25141116 0.17815880]
+Iteration 30: Accuracy = 0.663, Weights = [0.20493917 0.30730640 0.26577786 0.22197658]
+Iteration 40: Accuracy = 0.697, Weights = [0.22074273 0.25552023 0.28059000 0.24314703]
+Iteration 50: Accuracy = 0.705, Weights = [0.24096067 0.23914488 0.29371173 0.22618272]
+Iteration 60: Accuracy = 0.697, Weights = [0.24500308 0.24328494 0.27151176 0.24020021]
+Iteration 70: Accuracy = 0.709, Weights = [0.23002232 0.21688678 0.30557998 0.24751092]
+Iteration 80: Accuracy = 0.659, Weights = [0.17345174 0.24383698 0.35392899 0.22878229]
+Iteration 90: Accuracy = 0.617, Weights = [0.12171051 0.21595628 0.42450017 0.23783304]
+Best Accuracy: 0.724
+Optimized Kernel Weights: [0.24953279 0.24628997 0.24272879 0.26144845]
 
 Transfer Learning Iteration 2
-Iteration 0: Accuracy = 0.785, Weights = [0.64714792 0.17693048 0.02905824 0.14686335]
-Iteration 10: Accuracy = 0.754, Weights = [0.5376645  0.22092843 0.15268623 0.08872083]
-Iteration 20: Accuracy = 0.696, Weights = [0.21533132 0.57261753 0.00753241 0.20451874]
-Iteration 30: Accuracy = 0.673, Weights = [0.07415226 0.49086491 0.         0.43498283]
-Iteration 40: Accuracy = 0.688, Weights = [0.23269069 0.2807272  0.12134096 0.36524115]
-Iteration 50: Accuracy = 0.632, Weights = [0.1607434  0.42750534 0.39690004 0.01485122]
-Iteration 60: Accuracy = 0.629, Weights = [0.21258384 0.43861437 0.2640787  0.08472308]
-Iteration 70: Accuracy = 0.660, Weights = [0.         0.16282911 0.22522634 0.61194455]
-Iteration 80: Accuracy = 0.668, Weights = [0.08220631 0.67888738 0.23019444 0.00871187]
-Iteration 90: Accuracy = 0.514, Weights = [0.         0.         0.38734452 0.61265548]
-Best Accuracy: 0.818
-Optimized Kernel Weights: [1. 0. 0. 0.]
+Iteration 0: Accuracy = 0.720, Weights =  [0.24095629 0.24407698 0.24384480 0.27112193]
+Iteration 10: Accuracy = 0.716, Weights = [0.20450722 0.27278814 0.24659774 0.27610690]
+Iteration 20: Accuracy = 0.655, Weights = [0.22036006 0.29006214 0.27093222 0.21864558]
+Iteration 30: Accuracy = 0.659, Weights = [0.23655288 0.26795292 0.26482042 0.23067378]
+Iteration 40: Accuracy = 0.655, Weights = [0.19406781 0.30211451 0.26289705 0.24092063]
+Iteration 50: Accuracy = 0.655, Weights = [0.19261729 0.28447571 0.26723647 0.25567053]
+Iteration 60: Accuracy = 0.701, Weights = [0.18516051 0.32534177 0.20710267 0.28239505]
+Iteration 70: Accuracy = 0.709, Weights = [0.19349661 0.28811294 0.20936860 0.30902185]
+Iteration 80: Accuracy = 0.747, Weights = [0.23183737 0.28006430 0.17890772 0.30919061]
+Iteration 90: Accuracy = 0.736, Weights = [0.24825438 0.33132459 0.13288527 0.28753576]
+Best Accuracy: 0.755
+Optimized Kernel Weights: [0.25178347 0.28395354 0.13921452 0.32504847]
 
 Transfer Learning Iteration 3
-Iteration 0: Accuracy = 0.795, Weights = [0.7754082  0.10083536 0.         0.12375644]
-Iteration 10: Accuracy = 0.780, Weights = [0.61093408 0.13170585 0.         0.25736007]
-Iteration 20: Accuracy = 0.604, Weights = [0.37456924 0.         0.28056371 0.34486705]
-Iteration 30: Accuracy = 0.517, Weights = [0.33238987 0.16643452 0.44788709 0.05328852]
-Iteration 40: Accuracy = 0.517, Weights = [0.         0.22426637 0.7020478  0.07368583]
-Iteration 50: Accuracy = 0.517, Weights = [0.21883182 0.0684623  0.62599638 0.0867095 ]
-Iteration 60: Accuracy = 0.517, Weights = [0.0269681  0.08344372 0.66703121 0.22255698]
-Iteration 70: Accuracy = 0.517, Weights = [0.        0.        0.6739391 0.3260609]
-Iteration 80: Accuracy = 0.517, Weights = [0.01276886 0.21642216 0.77080898 0.        ]
-Iteration 90: Accuracy = 0.517, Weights = [0.26581603 0.13145348 0.42768851 0.17504198]
-Best Accuracy: 0.795
-Optimized Kernel Weights: [1. 0. 0. 0.]
+Iteration 0: Accuracy = 0.716, Weights = [0.24862918 0.28211142 0.1310076  0.3382518 ]
+Iteration 10: Accuracy = 0.709, Weights = [0.23682115 0.29379626 0.14812967 0.32125292]
+Iteration 20: Accuracy = 0.716, Weights = [0.26362589 0.2743661  0.15561951 0.3063885 ]
+Iteration 30: Accuracy = 0.690, Weights = [0.25255206 0.24705928 0.19575457 0.30463409]
+Iteration 40: Accuracy = 0.755, Weights = [0.31172316 0.18717773 0.14388269 0.35721642]
+Iteration 50: Accuracy = 0.766, Weights = [0.34776172 0.16158181 0.12897424 0.36168224]
+Iteration 60: Accuracy = 0.766, Weights = [0.35941308 0.12645763 0.15392126 0.36020804]
+Iteration 70: Accuracy = 0.766, Weights = [0.36839565 0.14924542 0.1474357  0.33492323]
+Iteration 80: Accuracy = 0.770, Weights = [0.3576503  0.16121764 0.09097529 0.39015677]
+Iteration 90: Accuracy = 0.762, Weights = [0.32456806 0.18399477 0.15036834 0.34106884]
+Best Accuracy: 0.770
+Optimized Kernel Weights: [0.35485156 0.15943323 0.10801841 0.3776968 ]
 
 Transfer Learning Iteration 4
-Iteration 0: Accuracy = 0.785, Weights = [0.8265301 0.1734699 0.        0.       ]
-Iteration 10: Accuracy = 0.749, Weights = [0.63161741 0.15655465 0.1576784  0.05414953]
-Iteration 20: Accuracy = 0.785, Weights = [0.91891986 0.00822331 0.07285683 0.        ]
-Iteration 30: Accuracy = 0.767, Weights = [0.68069337 0.         0.13680097 0.18250566]
-Iteration 40: Accuracy = 0.606, Weights = [0.33296875 0.34314606 0.29853215 0.02535305]
-Iteration 50: Accuracy = 0.586, Weights = [0.03834812 0.34976993 0.30482942 0.30705253]
-Iteration 60: Accuracy = 0.596, Weights = [0.35148107 0.06435259 0.27952884 0.3046375 ]
-Iteration 70: Accuracy = 0.703, Weights = [0.47323989 0.         0.10784899 0.41891112]
-Iteration 80: Accuracy = 0.660, Weights = [0.30881936 0.22212738 0.34585878 0.12319448]
-Iteration 90: Accuracy = 0.586, Weights = [0.27103965 0.35408001 0.37488034 0.        ]
-Best Accuracy: 0.788
-Optimized Kernel Weights: [0.8020524 0.1979476 0.        0.       ]
+Iteration 0: Accuracy = 0.808, Weights = [0.3451482  0.16278473 0.10498686 0.38708021]
+Iteration 10: Accuracy = 0.808, Weights = [0.33567481 0.15751908 0.13524024 0.37156587]
+Iteration 20: Accuracy = 0.805, Weights = [0.31217226 0.15065567 0.14013378 0.39703829]
+Iteration 30: Accuracy = 0.808, Weights = [0.31817092 0.13244908 0.14541138 0.40396862]
+Iteration 40: Accuracy = 0.816, Weights = [0.30032133 0.12205225 0.13184775 0.44577867]
+Iteration 50: Accuracy = 0.816, Weights = [0.28585653 0.10676496 0.13797372 0.46940479]
+Iteration 60: Accuracy = 0.808, Weights = [0.25189978 0.14277913 0.12716951 0.47815158]
+Iteration 70: Accuracy = 0.808, Weights = [0.24657718 0.15535058 0.13878183 0.45929041]
+Iteration 80: Accuracy = 0.808, Weights = [0.28397709 0.15524074 0.12986867 0.43091349]
+Iteration 90: Accuracy = 0.808, Weights = [0.28595382 0.16426219 0.11246797 0.43731601]
+Best Accuracy: 0.816
+Optimized Kernel Weights: [0.30144763 0.13185421 0.1230249  0.44367327]
 
-Best Overall Accuracy: 81.80%
+Transfer Learning Iteration 5
+Iteration 0: Accuracy = 0.816, Weights = [0.30729887 0.1283447  0.12215247 0.44220396]
+Iteration 10: Accuracy = 0.816, Weights = [0.32827963 0.13661916 0.10931859 0.42578262]
+Iteration 20: Accuracy = 0.816, Weights = [0.31375859 0.15904581 0.08371894 0.44347667]
+Iteration 30: Accuracy = 0.812, Weights = [0.30558361 0.14474868 0.04592729 0.50374042]
+Iteration 40: Accuracy = 0.816, Weights = [0.31592086 0.13870933 0.08182088 0.46354893]
+Iteration 50: Accuracy = 0.808, Weights = [0.30001349 0.09562606 0.0688869  0.53547356]
+Iteration 60: Accuracy = 0.812, Weights = [0.29511998 0.10863354 0.11515272 0.48109376]
+Iteration 70: Accuracy = 0.816, Weights = [0.30711769 0.14441236 0.09068192 0.45778804]
+Iteration 80: Accuracy = 0.812, Weights = [0.33247169 0.12589326 0.04832415 0.4933109 ]
+Iteration 90: Accuracy = 0.808, Weights = [0.34415072 0.11094423 0.05613461 0.48877043]
+Best Accuracy: 0.820
+Optimized Kernel Weights: [0.29189441 0.15008828 0.09202285 0.46599446]
+
+Transfer Learning Iteration 6
+Iteration 0: Accuracy = 0.769, Weights = [0.29359729 0.14916764 0.09858719 0.45864788]
+Iteration 10: Accuracy = 0.758, Weights = [0.3055107  0.16454156 0.13148653 0.39846121]
+Iteration 20: Accuracy = 0.758, Weights = [0.29212252 0.16894804 0.13942451 0.39950493]
+Iteration 30: Accuracy = 0.758, Weights = [0.24627371 0.16270554 0.17238053 0.41864022]
+Iteration 40: Accuracy = 0.762, Weights = [0.26783839 0.1799669  0.11396163 0.43823308]
+Iteration 50: Accuracy = 0.762, Weights = [0.26618601 0.18114255 0.0988084  0.45386304]
+Iteration 60: Accuracy = 0.762, Weights = [0.26123868 0.19534328 0.06322562 0.48019242]
+Iteration 70: Accuracy = 0.762, Weights = [0.27125458 0.21954132 0.0552393  0.4539648 ]
+Iteration 80: Accuracy = 0.754, Weights = [0.23488454 0.24095984 0.06375216 0.46040347]
+Iteration 90: Accuracy = 0.762, Weights = [0.27798641 0.23478523 0.0217596  0.46546876]
+Best Accuracy: 0.785
+Optimized Kernel Weights: [0.29093678 0.2101901  0.         0.49887311]
+
+Transfer Learning Iteration 7
+Iteration 0: Accuracy = 0.781, Weights = [0.28041683 0.1990434  0.         0.52053977]
+Iteration 10: Accuracy = 0.785, Weights = [0.25117932 0.17641486 0.04983404 0.52257178]
+Iteration 20: Accuracy = 0.781, Weights = [0.21579953 0.13854431 0.11558102 0.53007515]
+Iteration 30: Accuracy = 0.762, Weights = [0.20753825 0.1615644  0.1575479  0.47334944]
+Iteration 40: Accuracy = 0.781, Weights = [0.19275111 0.14050158 0.16431898 0.50242833]
+Iteration 50: Accuracy = 0.781, Weights = [0.20427591 0.12817261 0.1242512  0.54330027]
+Iteration 60: Accuracy = 0.781, Weights = [0.24125171 0.10599329 0.11388271 0.53887229]
+Iteration 70: Accuracy = 0.785, Weights = [0.21936943 0.08369847 0.1390926  0.5578395 ]
+Iteration 80: Accuracy = 0.785, Weights = [0.19377909 0.09069212 0.12416338 0.59136541]
+Iteration 90: Accuracy = 0.788, Weights = [0.15016346 0.07382994 0.1394316  0.636575  ]
+Best Accuracy: 0.788
+Optimized Kernel Weights: [0.15952303 0.0667517  0.14708855 0.62663671]
+
+Transfer Learning Iteration 8
+Iteration 0: Accuracy = 0.750, Weights = [0.15462934 0.08266121 0.15145718 0.61125228]
+Iteration 10: Accuracy = 0.754, Weights = [0.11232093 0.06465163 0.123321   0.69970644]
+Iteration 20: Accuracy = 0.750, Weights = [0.0995307  0.09542966 0.15250906 0.65253057]
+Iteration 30: Accuracy = 0.758, Weights = [0.12542362 0.07262036 0.13229474 0.66966127]
+Iteration 40: Accuracy = 0.754, Weights = [0.14026042 0.04572011 0.1375508  0.67646867]
+Iteration 50: Accuracy = 0.750, Weights = [0.16082375 0.09033166 0.1142935  0.63455109]
+Iteration 60: Accuracy = 0.750, Weights = [0.13161714 0.0784422  0.15262949 0.63731116]
+Iteration 70: Accuracy = 0.750, Weights = [0.18432071 0.05970937 0.12024272 0.63572721]
+Iteration 80: Accuracy = 0.762, Weights = [0.20718554 0.03944546 0.10668065 0.64668834]
+Iteration 90: Accuracy = 0.769, Weights = [0.2053342  0.00782207 0.1122378  0.67460592]
+Best Accuracy: 0.773
+Optimized Kernel Weights: [0.20501715 0.03182588 0.09150344 0.67165353]
+
+Transfer Learning Iteration 9
+Iteration 0: Accuracy = 0.827, Weights = [0.18995822 0.02692438 0.10160212 0.68151529]
+Iteration 10: Accuracy = 0.827, Weights = [0.16262229 0.06118412 0.10326598 0.67292761]
+Iteration 20: Accuracy = 0.827, Weights = [0.15767762 0.07387602 0.08293716 0.68550919]
+Iteration 30: Accuracy = 0.838, Weights = [0.15014167 0.09002263 0.077853   0.6819827 ]
+Iteration 40: Accuracy = 0.819, Weights = [0.12380513 0.16490421 0.05214418 0.65914648]
+Iteration 50: Accuracy = 0.835, Weights = [0.11652557 0.1092595  0.07691154 0.69730339]
+Iteration 60: Accuracy = 0.819, Weights = [0.10478127 0.12302978 0.09355122 0.67863773]
+Iteration 70: Accuracy = 0.819, Weights = [0.12312422 0.11329372 0.09954097 0.66404109]
+Iteration 80: Accuracy = 0.815, Weights = [0.13746221 0.08297005 0.13960137 0.63996637]
+Iteration 90: Accuracy = 0.815, Weights = [0.09260997 0.11049912 0.13696082 0.65993008]
+Best Accuracy: 0.838
+Optimized Kernel Weights: [0.16948581 0.05089252 0.10069696 0.67892472]
+
+Transfer Learning Iteration 10
+Iteration 0: Accuracy = 0.777, Weights = [0.1597406  0.04620292 0.10377224 0.69028424]
+Iteration 10: Accuracy = 0.777, Weights = [0.14292321 0.07788763 0.08352797 0.69566119]
+Iteration 20: Accuracy = 0.777, Weights = [0.20214027 0.07400108 0.06428365 0.65957499]
+Iteration 30: Accuracy = 0.777, Weights = [0.23700554 0.09249473 0.0107835  0.65971623]
+Iteration 40: Accuracy = 0.777, Weights = [0.24519615 0.07635266 0.00428397 0.67416722]
+Iteration 50: Accuracy = 0.781, Weights = [0.29158076 0.03052934 0.00204649 0.67584341]
+Iteration 60: Accuracy = 0.777, Weights = [0.26526737 0.06617323 0.07714842 0.59141098]
+Iteration 70: Accuracy = 0.769, Weights = [0.23116909 0.08704012 0.10010987 0.58168093]
+Iteration 80: Accuracy = 0.769, Weights = [0.21093144 0.1128807  0.07937922 0.59680864]
+Iteration 90: Accuracy = 0.769, Weights = [0.16236262 0.07533497 0.12325824 0.63904417]
+Best Accuracy: 0.781
+Optimized Kernel Weights: [0.27580374 0.05196898 0.         0.67222728]
+
