@@ -31,6 +31,7 @@ kernel_types = ['linear', 'poly', 'rbf', 'sigmoid']
 conventional_SVM = Conventional_SVM(X_train, y_train, X_test, y_test)
 conventional_SVM.test_kernels(kernel_types)
 
+
 # Multi-Kernel SVM
 '''
 print('\n\n\nMultiple Kernel Support Vector Machine:\n')
