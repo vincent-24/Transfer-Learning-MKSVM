@@ -10,51 +10,64 @@ from Conventional_SVM import *
 from Multi_Kernel_SVM import *
 
 #====================================DEFINE DATASET AND VARIABLES===================================#
-data = pd.read_csv('Malware Dataset/archive/ClaMP_Integrated-5184.csv')
-X = data.iloc[:, :-1]
-y = data.iloc[:, -1]
+# Initialize variables
+dataset = ['NMAP_FIN_SCAN', 'NMAP_OS_DETECTION', 'NMAP_TCP_scan', 'NMAP_UDP_SCAN', 'NMAP_XMAS_TREE_SCAN']
 
-X_numeric = X.select_dtypes(include=['float64', 'int64'])
+X_NMAP_FIN_SCAN = None
+y_NMAP_FIN_SCAN = None
 
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X_numeric)
-X_scaled_df = pd.DataFrame(X_scaled, columns=X_numeric.columns)
+X_NMAP_OS_DETECTION = None
+y_NMAP_OS_DETECTION = None
 
-X_non_numeric = X.select_dtypes(exclude=['float64', 'int64'])
-X_scaled_full = pd.concat([X_scaled_df, X_non_numeric.reset_index(drop=True)], axis=1)
+X_NMAP_TCP_scan = None
+y_NMAP_TCP_scan = None
 
-X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.3, random_state=42)
+X_NMAP_UDP_SCAN = None
+y_NMAP_UDP_SCAN = None
+
+X_NMAP_XMAS_TREE_SCAN = None
+y_NMAP_XMAS_TREE_SCAN = None
+
+# Standardize dataset features
+for n in dataset:
+    data = pd.read_csv(f'Malware Dataset/UCI_NMAP_datasets/{n}.csv')
+
+    X = data.iloc[:, :-1]  
+    y = data.iloc[:, -1]   
+
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+
+    X_scaled_df = pd.DataFrame(X_scaled, columns=X.columns)
+
+    globals()[f'X_{n}'] = X_scaled_df
+    globals()[f'y_{n}'] = y.values
 
 # Conventional SVM
 print('Conventional Support Vector Machine:\n')
 kernel_types = ['linear', 'poly', 'rbf', 'sigmoid']
-conventional_SVM = Conventional_SVM(X_train, y_train, X_test, y_test)
+conventional_SVM = Conventional_SVM(X_NMAP_TCP_scan, y_NMAP_TCP_scan, X_NMAP_OS_DETECTION, y_NMAP_OS_DETECTION)
 conventional_SVM.test_kernels(kernel_types)
 
 # Multi-Kernel SVM
-'''
 print('\n\n\nMultiple Kernel Support Vector Machine:\n')
-mksvm = Multi_Kernel_SVM(X_train, y_train, X_test, y_test)
+mksvm = Multi_Kernel_SVM(X_NMAP_TCP_scan, y_NMAP_TCP_scan, X_NMAP_OS_DETECTION, y_NMAP_OS_DETECTION)
 mksvm.compute_kernel_matricies()
 mksvm.combine_kernels([0.2, 0.4, 0.5, 0.3])
 mksvm.fit_combined_kernels()
 mksvm.predict_combined_kernels()
 mksvm.get_accuracy()
-'''
 
 # Transfer Learning MKSVM
-'''
 from Transfer_Learning import *
 
 print('\n\n\nTransfer Learning Multiple Kernel Support Vector Machine:\n')
 
-num_datasets = 10
+test_sets = [
+    (X_NMAP_OS_DETECTION, y_NMAP_OS_DETECTION),
+    (X_NMAP_UDP_SCAN, y_NMAP_UDP_SCAN),
+    (X_NMAP_XMAS_TREE_SCAN, y_NMAP_XMAS_TREE_SCAN)
+]
 
-X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.5, random_state=42)
-X_test_splits = np.array_split(X_test, num_datasets)
-y_test_splits = np.array_split(y_test, num_datasets)
-test_sets = [(X_test_splits[i], y_test_splits[i]) for i in range(num_datasets)]
-
-clf = TransferLearningSVM(X_train, y_train, test_sets)
+clf = TransferLearningSVM(X_NMAP_TCP_scan, y_NMAP_TCP_scan, test_sets)
 clf.tlmksvm()
-'''
