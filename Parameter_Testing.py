@@ -3,7 +3,7 @@ import numpy as np
 from numpy import load
 from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.model_selection import train_test_split
 
 from Conventional_SVM import *
@@ -30,7 +30,6 @@ print('Conventional Support Vector Machine:\n')
 kernel_types = ['linear', 'poly', 'rbf', 'sigmoid']
 conventional_SVM = Conventional_SVM(X_train, y_train, X_test, y_test)
 conventional_SVM.test_kernels(kernel_types)
-
 
 # Multi-Kernel SVM
 '''
