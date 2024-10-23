@@ -10,6 +10,9 @@ class Conventional_SVM:
         self.y_test = y_test
 
     def __evaluate_svm(self, kernel, C=2, gamma='auto', degree=3):
+        if self.X_train.shape[0] == 0 or self.X_test.shape[0] == 0:
+            print(f"No data to train or test on with {kernel} kernel.")
+            return
         clf = SVC(kernel=kernel, C=C, gamma=gamma, degree=degree)
         clf.fit(self.X_train, self.y_train)
         y_predict = clf.predict(self.X_test)

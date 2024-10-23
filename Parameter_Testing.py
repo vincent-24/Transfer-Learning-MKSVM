@@ -10,10 +10,10 @@ from Conventional_SVM import *
 from Multi_Kernel_SVM import *
 
 # Initialize variables
-dataset = ['RT_IOT', 'android']
+dataset = ['tuandromd', 'android_']
 
-X_RT_IOT = None
-y_RT_IOT = None
+X_tuandromd = None
+y_tuandromd = None
 
 X_android = None
 y_android = None
@@ -21,6 +21,8 @@ y_android = None
 # Standardize dataset features
 for n in dataset:
     data = pd.read_csv(f'Malware Dataset/UCI_datasets/{n}.csv')
+
+    data.fillna(0, inplace=True)  
 
     X = data.iloc[:, :-1]  
     y = data.iloc[:, -1]   
@@ -31,19 +33,22 @@ for n in dataset:
     # Create a DataFrame for the scaled features
     X_scaled_df = pd.DataFrame(X_scaled, columns=X.columns)
 
-    globals()[f'X_{n}'] = X_scaled_df
-    globals()[f'y_{n}'] = y.values
+    if n == 'tuandromd':
+        X_tuandromd = X_scaled_df
+        y_tuandromd = y.values
+    elif n == 'android_':
+        X_android = X_scaled_df
+        y_android = y.values
 
 # Conventional SVM
 print('Conventional Support Vector Machine:\n')
 kernel_types = ['linear', 'poly', 'rbf', 'sigmoid']
-conventional_SVM = Conventional_SVM(X_RT_IOT, y_RT_IOT, X_android, y_android)
+conventional_SVM = Conventional_SVM(X_tuandromd, y_tuandromd, X_android, y_android)
 conventional_SVM.test_kernels(kernel_types)
 
 # Multi-Kernel SVM
-'''
 print('\n\n\nMultiple Kernel Support Vector Machine:\n')
-mksvm = Multi_Kernel_SVM(X_RT_IOT2022, y_RT_IOT2022, X_android, y_android)
+mksvm = Multi_Kernel_SVM(X_tuandromd, y_tuandromd, X_android, y_android)
 mksvm.compute_kernel_matricies()
 mksvm.combine_kernels([0.2, 0.4, 0.5, 0.3])
 mksvm.fit_combined_kernels()
@@ -59,6 +64,5 @@ test_sets = [
     (X_android, y_android)
 ]
 
-clf = TransferLearningSVM(X_RT_IOT2022, y_RT_IOT2022, test_sets)
+clf = TransferLearningSVM(X_tuandromd, y_tuandromd, test_sets)
 clf.tlmksvm()
-'''
