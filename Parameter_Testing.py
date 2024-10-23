@@ -26,7 +26,7 @@ for n in dataset:
     y = data.iloc[:, -1]   
 
     scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)  # Scale all features in X
+    X_scaled = scaler.fit_transform(X) 
 
     # Create a DataFrame for the scaled features
     X_scaled_df = pd.DataFrame(X_scaled, columns=X.columns)
@@ -41,6 +41,7 @@ conventional_SVM = Conventional_SVM(X_RT_IOT, y_RT_IOT, X_android, y_android)
 conventional_SVM.test_kernels(kernel_types)
 
 # Multi-Kernel SVM
+'''
 print('\n\n\nMultiple Kernel Support Vector Machine:\n')
 mksvm = Multi_Kernel_SVM(X_RT_IOT2022, y_RT_IOT2022, X_android, y_android)
 mksvm.compute_kernel_matricies()
@@ -60,3 +61,4 @@ test_sets = [
 
 clf = TransferLearningSVM(X_RT_IOT2022, y_RT_IOT2022, test_sets)
 clf.tlmksvm()
+'''
