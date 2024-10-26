@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 
 from Conventional_SVM import *
 from Multi_Kernel_SVM import *
+from Transfer_Learning import *
 
 # Initialize variables
 dataset = ['tuandromd', 'android_']
@@ -47,6 +48,7 @@ conventional_SVM = Conventional_SVM(X_tuandromd, y_tuandromd, X_android, y_andro
 conventional_SVM.test_kernels(kernel_types)
 
 # Multi-Kernel SVM
+'''
 print('\n\n\nMultiple Kernel Support Vector Machine:\n')
 mksvm = Multi_Kernel_SVM(X_tuandromd, y_tuandromd, X_android, y_android)
 mksvm.compute_kernel_matricies()
@@ -56,13 +58,19 @@ mksvm.predict_combined_kernels()
 mksvm.get_accuracy()
 
 # Transfer Learning MKSVM
-from Transfer_Learning import *
-
 print('\n\n\nTransfer Learning Multiple Kernel Support Vector Machine:\n')
 
 test_sets = [
     (X_android, y_android)
 ]
+'''
+
+num_of_sets = 1
+
+X_tests = np.array_split(X_android, num_of_sets)
+y_tests = np.array_split(y_android, num_of_sets)
+
+test_sets = [(X_tests[i], y_tests[i]) for i in range(num_of_sets)]
 
 clf = TransferLearningSVM(X_tuandromd, y_tuandromd, test_sets)
 clf.tlmksvm()
